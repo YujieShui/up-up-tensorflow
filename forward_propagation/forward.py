@@ -57,7 +57,7 @@ for epoch in range(10): # iterate db for 10
             # [b,784]@[784,256]+[256] => [b,256] + [256] => []
             h1 = tf.nn.relu(x@w1 + b1)
             h2 = tf.nn.relu(h1@w2 + b2)
-            out = tf.nn.relu(h2@w3 + b3)
+            out = h2@w3 + b3
 
             # compute loss
             # out: [b, 10]
